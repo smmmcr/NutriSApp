@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://demos.jquerymobile.com/1.4.2/theme-default/ -->
+<html class="ui-mobile"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="http://demos.jquerymobile.com/1.4.2/theme-default/">--><base href=".">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<title>Default theme - jQuery Mobile Demos</title>
+	<link rel="stylesheet" href="http://demos.jquerymobile.com/1.4.2/css/themes/default/jquery.mobile-1.4.2.min.css">
+	<link rel="shortcut icon" href="http://demos.jquerymobile.com/1.4.2/favicon.ico">
+	<script src="./Default theme - jQuery Mobile Demos_files/jquery.js"></script>
+	<script src="./Default theme - jQuery Mobile Demos_files/jquery.mobile-1.4.2.min.js"></script>
+	<script>
+		$( document ).on( "pagecreate", function() {
+			$( "#theme-selector input" ).on( "change", function( event ) {
+				var themeClass = $( "#theme-selector input:checked" ).attr( "id" );
+
+				$( "#testpage" ).removeClass( "ui-page-theme-a ui-page-theme-b" ).addClass( "ui-page-theme-" + themeClass );
+				$( "#ui-body-test" ).removeClass( "ui-body-a ui-body-b" ).addClass( "ui-body-" + themeClass );
+				$( "#ui-bar-test, #ui-bar-form" ).removeClass( "ui-bar-a ui-bar-b" ).addClass( "ui-bar-" + themeClass );
+				$( ".ui-collapsible-content" ).removeClass( "ui-body-a ui-body-b" ).addClass( "ui-body-" + themeClass );
+				$( ".theme" ).text( themeClass );
+			});
+			$( "#opt-shadow input" ).on( "change", function( event ) {
+				if ( $( "#on" ).prop( "checked" ) ) {
+					$( "#testpage" ).removeClass( "noshadow" );
+				} else if ( $( "#off" ).prop( "checked" ) ) {
+					$( "#testpage" ).addClass( "noshadow" );
+				}
+			});
+			$( "#opt-iconshadow input" ).on( "change", function( event ) {
+				if ( $( "#off1" ).prop( "checked" ) ) {
+					$( "#testpage" ).removeClass( "ui-shadow-icon" );
+				} else if ( $( "#on1" ).prop( "checked" ) ) {
+					$( "#testpage" ).addClass( "ui-shadow-icon" );
+				}
+			});
+			$( "#opt-navbars input" ).on( "change", function( event ) {
+				if ( $( "#show" ).prop( "checked" ) ) {
+					$( "#testpage .ui-navbar" ).show();
+					$( "#testpage .ui-footer h4" ).hide();
+				} else if ( $( "#hide" ).prop( "checked" ) ) {
+					$( "#testpage .ui-navbar" ).hide();
+					$( "#testpage .ui-footer h4" ).show();
+				}
+			});
+		});
+	</script>
+	<style>
+		.noshadow * {
+			-webkit-box-shadow: none !important;
+			-moz-box-shadow: none !important;
+			box-shadow: none !important;
+		}
+		form.ui-mini .ui-field-contain fieldset.ui-controlgroup legend small {
+			color: #666;
+		}
+	</style>
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+<div data-role="page" id="testpage" data-url="testpage" tabindex="0" class="ui-page ui-page-theme-a ui-page-footer-fixed ui-page-active" style="padding-bottom: 35px; min-height: 589px;">
+
+	<div class="ui-panel-wrapper"><div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+		<h1 class="ui-title" role="heading" aria-level="1">Default theme</h1>
+		<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">Back</a>
+		<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn-right ui-btn ui-icon-gear ui-btn-icon-left ui-shadow ui-corner-all" data-role="button" role="button">Button</a>
+		<div data-role="navbar" class="ui-navbar" role="navigation">
+			<ul class="ui-grid-b">
+				<li class="ui-block-a"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-state-persist ui-link ui-btn">Menu item 1</a></li>
+				<li class="ui-block-b"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-link ui-btn">Menu item 2</a></li>
+				<li class="ui-block-c"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-link ui-btn ui-btn-active">Menu item 3</a></li>
+			</ul>
+		</div>
+	</div><div class="ui-content" role="main">
+
+		<form class="ui-mini">
+			<div class="ui-field-contain" id="theme-selector">
+				<fieldset data-role="controlgroup" data-type="horizontal" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all"><div role="heading" class="ui-controlgroup-label"><legend>Theme:</legend></div><div class="ui-controlgroup-controls ">
+					
+					
+					<div class="ui-radio"><label for="a" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-first-child">A</label><input type="radio" name="theme" id="a" checked=""></div>
+					
+					<div class="ui-radio"><label for="b" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-off ui-last-child">B</label><input type="radio" name="theme" id="b"></div>
+				</div></fieldset>
+			</div>
+			<div class="ui-field-contain" id="opt-navbars">
+				<fieldset data-role="controlgroup" data-type="horizontal" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all"><div role="heading" class="ui-controlgroup-label"><legend>Navbars:</legend></div><div class="ui-controlgroup-controls ">
+					
+					
+					<div class="ui-radio"><label for="show" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-first-child">Show</label><input type="radio" name="navbars" id="show" checked=""></div>
+					
+					<div class="ui-radio"><label for="hide" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-off ui-last-child">Hide</label><input type="radio" name="navbars" id="hide"></div>
+				</div></fieldset>
+			</div>
+			<div class="ui-field-contain" id="opt-shadow">
+				<fieldset data-role="controlgroup" data-type="horizontal" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all"><div role="heading" class="ui-controlgroup-label"><legend>Shadow:<br><small>Off: set the widget option shadow to false (data-shadow="false")</small></legend></div><div class="ui-controlgroup-controls ">
+					
+					
+					<div class="ui-radio"><label for="on" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-first-child">On</label><input type="radio" name="shadow" id="on" checked=""></div>
+					
+					<div class="ui-radio"><label for="off" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-off ui-last-child">Off</label><input type="radio" name="shadow" id="off"></div>
+				</div></fieldset>
+			</div>
+			<div class="ui-field-contain" id="opt-iconshadow">
+				<fieldset data-role="controlgroup" data-type="horizontal" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all"><div role="heading" class="ui-controlgroup-label"><legend>Icon shadow:<br><small>On: add class ui-shadow-icon to the button or its container</small></legend></div><div class="ui-controlgroup-controls ">
+					
+					
+					<div class="ui-radio"><label for="on1" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-off ui-first-child">On</label><input type="radio" name="iconshadow" id="on1"></div>
+					
+					<div class="ui-radio"><label for="off1" class="ui-btn ui-corner-all ui-btn-inherit ui-radio-on ui-btn-active ui-last-child">Off</label><input type="radio" name="iconshadow" id="off1" checked=""></div>
+				</div></fieldset>
+			</div>
+		</form>
+
+		<div id="ui-body-test" class="ui-body ui-body-a ui-corner-all" style="margin-bottom:1em;">
+		<p>I am a div with classes ui-body, ui-body-<span class="theme">a</span> and ui-corner-all.</p>
+		<p><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-link">I am a link</a></p>
+			<h4>Panels</h4>
+			<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#panel-reveal" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-mini">Reveal</a>
+			<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#panel-overlay" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-mini">Overlay</a>
+			<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#panel-push" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-mini">Push</a>
+		</div>
+
+		<div id="ui-bar-test" class="ui-bar ui-bar-a ui-corner-all" style="margin-bottom:1em;">
+		<p>I am a div with classes ui-bar, ui-bar-<span class="theme">a</span> and ui-corner-all. <a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-link">I am a link</a></p>
+		</div>
+
+		<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r ui-btn-icon-right">We</a>
+		<button class="ui-btn ui-icon-carat-r ui-btn-icon-right ui-btn-inline ui-shadow ui-corner-all">are</button>
+		<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r ui-btn-icon-right">buttons<input type="button" value="buttons" data-inline="true" data-icon="carat-r" data-iconpos="right"></div>
+
+		<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+			<li class="ui-li-static ui-body-inherit ui-first-child">I</li>
+			<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit ui-li-has-count">Divider<span class="ui-li-count ui-body-inherit">3</span></li>
+			<li class="ui-li-static ui-body-inherit">am</li>
+			<li class="ui-li-static ui-body-inherit ui-li-has-count ui-last-child">static<span class="ui-li-count ui-body-inherit">6</span></li>
+		</ul>
+
+		<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+			<li class="ui-first-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">We</a></li>
+			<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-inherit">Divider</li>
+			<li class="ui-li-has-count"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">have<span class="ui-li-count ui-body-inherit">4</span></a></li>
+			<li class="ui-last-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">links</a></li>
+		</ul>
+
+		<ul data-role="listview" data-split-icon="gear" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+			<li class="ui-li-has-alt ui-li-has-thumb ui-first-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn">
+				<img src="./Default theme - jQuery Mobile Demos_files/album-bb.jpg">
+			<h2>Broken Bells</h2>
+			<p>Broken Bells</p></a>
+				<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-gear" title="Purchase album"></a>
+			</li>
+			<li class="ui-li-has-alt ui-li-has-thumb"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn">
+				<img src="./Default theme - jQuery Mobile Demos_files/album-hc.jpg">
+			<h2>Warning</h2>
+			<p>Hot Chip</p></a>
+				<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-gear" title="Purchase album"></a>
+			</li>
+			<li class="ui-li-has-alt ui-li-has-thumb ui-last-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn">
+				<img src="./Default theme - jQuery Mobile Demos_files/album-bb.jpg">
+			<h2>Wolfgang Amadeus Phoenix</h2>
+			<p>Phoenix</p></a>
+				<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#purchase" data-rel="popup" data-position-to="window" data-transition="pop" aria-haspopup="true" aria-owns="purchase" aria-expanded="false" class="ui-btn ui-btn-icon-notext ui-icon-gear" title="Purchase album"></a>
+			</li>
+		</ul>
+
+		<form>
+			<div class="ui-field-contain">
+				<label for="name2">Text Input:</label>
+				<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear"><input type="text" name="name2" id="name2" value="" data-clear-btn="true"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden" title="Clear text">Clear text</a></div>
+			</div>
+			<div class="ui-field-contain">
+				<label for="textarea2">Textarea:</label>
+				<textarea cols="40" rows="8" name="textarea2" id="textarea2" class="ui-input-text ui-shadow-inset ui-body-inherit ui-corner-all ui-textinput-autogrow" style="height: 52px;"></textarea>
+			</div>
+			<div class="ui-field-contain">
+				<label for="flip2">Flip switch:</label>
+				<div class="ui-flipswitch ui-shadow-inset ui-bar-inherit ui-corner-all"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-flipswitch-on ui-btn ui-shadow ui-btn-inherit">On</a><span class="ui-flipswitch-off">Off</span><select name="flip2" id="flip2" data-role="flipswitch" class="ui-flipswitch-input" tabindex="-1">
+					<option value="off">Off</option>
+					<option value="on">On</option>
+				</select></div>
+			</div>
+			<div class="ui-field-contain">
+				<label for="slider2" id="slider2-label">Slider:</label>
+				<div class="ui-slider"><input type="number" data-type="range" name="slider2" id="slider2" value="0" min="0" max="100" data-highlight="true" class="ui-shadow-inset ui-body-inherit ui-corner-all ui-slider-input"><div role="application" class="ui-slider-track ui-shadow-inset ui-bar-inherit ui-corner-all"><div class="ui-slider-bg ui-btn-active" style="width: 0%;"></div><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-slider-handle ui-btn ui-shadow" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0" title="0" aria-labelledby="slider2-label" style="left: 0%;"></a></div></div>
+			</div>
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical ui-corner-all"><div role="heading" class="ui-controlgroup-label"><legend>Checkbox:</legend></div><div class="ui-controlgroup-controls ">
+					
+					<div class="ui-checkbox"><label for="checkbox-v-1a" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-first-child">One</label><input type="checkbox" name="checkbox-v-1a" id="checkbox-v-1a"></div>
+					
+					<div class="ui-checkbox"><label for="checkbox-v-1b" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off">Two</label><input type="checkbox" name="checkbox-v-1b" id="checkbox-v-1b"></div>
+					
+					<div class="ui-checkbox"><label for="checkbox-v-1c" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-checkbox-off ui-last-child">Three</label><input type="checkbox" name="checkbox-v-1c" id="checkbox-v-1c"></div>
+					
+				</div></fieldset>
+			</div>
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical ui-corner-all"><div role="heading" class="ui-controlgroup-label"><legend>Radio:</legend></div><div class="ui-controlgroup-controls ">
+					
+					<div class="ui-radio"><label for="radio-v-1a" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-radio-on ui-first-child">One</label><input type="radio" name="radio-v-1" id="radio-v-1a" checked=""></div>
+					
+					<div class="ui-radio"><label for="radio-v-1b" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-radio-off">Two</label><input type="radio" name="radio-v-1" id="radio-v-1b"></div>
+					
+					<div class="ui-radio"><label for="radio-v-1c" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-radio-off ui-last-child">Three</label><input type="radio" name="radio-v-1" id="radio-v-1c"></div>
+					
+				</div></fieldset>
+			</div>
+			<div class="ui-field-contain">
+				<fieldset data-role="controlgroup" data-type="horizontal" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all"><div role="heading" class="ui-controlgroup-label"><legend>Controlgroup:</legend></div><div class="ui-controlgroup-controls ">
+					
+					<button class="ui-btn ui-icon-home ui-btn-icon-right ui-shadow ui-corner-all ui-first-child">One</button>
+					<div class="ui-btn ui-input-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-right">Two<input type="button" data-icon="back" data-iconpos="right" value="Two"></div>
+					<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-corner-all ui-shadow ui-icon-grid ui-btn-icon-right ui-last-child">Three</a>
+				</div></fieldset>
+			</div>
+			<div class="ui-field-contain">
+				<label for="select-choice-1" class="select">Custom select:</label>
+				<div class="ui-select"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" role="button" id="select-choice-1-button" aria-haspopup="true" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow ui-li-has-count"><span>&nbsp;</span><span class="ui-li-count ui-body-inherit" style="display: none;">0</span></a><select name="select-choice-1" id="select-choice-1" data-native-menu="false" multiple="multiple" tabindex="-1">
+					<option value="standard">Standard: 7 day</option>
+					<option value="rush">Rush: 3 days</option>
+					<option value="express">Express: next day</option>
+					<option value="overnight">Overnight</option>
+				</select><div style="display: none;" id="select-choice-1-listbox-placeholder"><!-- placeholder for select-choice-1-listbox --></div></div>
+			</div>
+			<div class="ui-field-contain">
+				<label for="submit-1">Send form:</label>
+				<div class="ui-btn ui-input-btn ui-corner-all ui-shadow">Send<input type="submit" id="submit-1" value="Send"></div>
+			</div>
+		</form>
+
+		<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-corner-all ui-shadow ui-icon-gear ui-btn-icon-left ui-btn-active">Active button</a>
+
+		<p>Form inside static list:</p>
+
+		<form>
+			<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+				<li class="ui-field-contain ui-li-static ui-body-inherit ui-first-child">
+					<label for="name3">Text Input:</label>
+					<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear"><input type="text" name="name3" id="name3" value="" data-clear-btn="true"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden" title="Clear text">Clear text</a></div>
+				</li>
+				<li class="ui-field-contain ui-li-static ui-body-inherit">
+					<label for="flip3" id="flip3-label">Slider flip switch:</label>
+					<select name="flip3" id="flip3" data-role="slider" tabindex="-1" class="ui-slider-switch">
+						<option value="off">Off</option>
+						<option value="on">On</option>
+					</select><div role="application" class="ui-slider ui-slider-switch ui-slider-track ui-shadow-inset ui-bar-inherit ui-corner-all"><span class="ui-slider-label ui-slider-label-a ui-btn-active" role="img" style="width: 0%;">On</span><span class="ui-slider-label ui-slider-label-b" role="img" style="width: 100%;">Off</span><div class="ui-slider-inneroffset"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-slider-handle ui-slider-handle-snapping ui-btn ui-shadow" role="slider" aria-valuemin="0" aria-valuemax="1" aria-valuenow="off" aria-valuetext="Off" title="Off" aria-labelledby="flip3-label" style="left: 0%;"></a></div></div>
+				</li>
+				<li class="ui-field-contain ui-li-static ui-body-inherit ui-last-child">
+					<label for="slider3" id="slider3-label">Slider:</label>
+					<div class="ui-slider"><input type="number" data-type="range" name="slider3" id="slider3" value="0" min="0" max="100" data-highlight="true" class="ui-shadow-inset ui-body-inherit ui-corner-all ui-slider-input"><div role="application" class="ui-slider-track ui-shadow-inset ui-bar-inherit ui-corner-all"><div class="ui-slider-bg ui-btn-active" style="width: 0%;"></div><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-slider-handle ui-btn ui-shadow" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0" title="0" aria-labelledby="slider3-label" style="left: 0%;"></a></div></div>
+				</li>
+			</ul>
+		</form>
+
+		<div id="ui-bar-form" class="ui-bar ui-bar-a">
+		<p>ui-bar-<span class="theme">a</span></p>
+			<div class="ui-field-contain">
+				<label for="name4">Text Input:</label>
+				<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear"><input type="text" name="name4" id="name4" value="" data-clear-btn="true"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden" title="Clear text">Clear text</a></div>
+			</div>
+			<div class="ui-field-contain">
+				<label for="flip4" id="flip4-label">Flip switch:</label>
+				<select name="flip4" id="flip4" data-role="slider" tabindex="-1" class="ui-slider-switch">
+					<option value="off">Off</option>
+					<option value="on">On</option>
+				</select><div role="application" class="ui-slider ui-slider-switch ui-slider-track ui-shadow-inset ui-bar-inherit ui-corner-all"><span class="ui-slider-label ui-slider-label-a ui-btn-active" role="img" style="width: 0%;">On</span><span class="ui-slider-label ui-slider-label-b" role="img" style="width: 100%;">Off</span><div class="ui-slider-inneroffset"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-slider-handle ui-slider-handle-snapping ui-btn ui-shadow" role="slider" aria-valuemin="0" aria-valuemax="1" aria-valuenow="off" aria-valuetext="Off" title="Off" aria-labelledby="flip4-label" style="left: 0%;"></a></div></div>
+			</div>
+			<div class="ui-field-contain">
+				<label for="slider4" id="slider4-label">Slider:</label>
+				<div class="ui-slider"><input type="number" data-type="range" name="slider4" id="slider4" value="0" min="0" max="100" data-highlight="true" class="ui-shadow-inset ui-body-inherit ui-corner-all ui-slider-input"><div role="application" class="ui-slider-track ui-shadow-inset ui-bar-inherit ui-corner-all"><div class="ui-slider-bg ui-btn-active" style="width: 0%;"></div><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-slider-handle ui-btn ui-shadow" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0" title="0" aria-labelledby="slider4-label" style="left: 0%;"></a></div></div>
+			</div>
+		</div>
+
+		<div data-role="collapsible" data-content-theme="a" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed"><h4 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">Heading<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h4><div class="ui-collapsible-content ui-body-a ui-collapsible-content-collapsed" aria-hidden="true">
+			
+		<p>I'm the collapsible content with a themed content block set to "<span class="theme">a</span>".</p>
+		</div></div>
+
+		<div data-role="collapsibleset" data-content-theme="a" class="ui-collapsible-set ui-group-theme-inherit ui-corner-all">
+			<div data-role="collapsible" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed ui-first-child"><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">Section 1<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3><div class="ui-collapsible-content ui-body-a ui-collapsible-content-collapsed" aria-hidden="true">
+				
+			<p>I'm the collapsible content for section 1</p>
+			</div></div>
+			<div data-role="collapsible" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed"><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">Section 2<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3><div class="ui-collapsible-content ui-body-a ui-collapsible-content-collapsed" aria-hidden="true">
+				
+			<p>I'm the collapsible content for section 2</p>
+			</div></div>
+			<div data-role="collapsible" class="ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-themed-content ui-collapsible-collapsed ui-last-child"><h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-collapsible-heading-toggle ui-btn ui-icon-plus ui-btn-icon-left ui-btn-inherit">Section 3<span class="ui-collapsible-heading-status"> click to expand contents</span></a></h3><div class="ui-collapsible-content ui-body-a ui-collapsible-content-collapsed" aria-hidden="true">
+				
+			<p>I'm the collapsible content for section 3</p>
+			</div></div>
+		</div>
+
+	</div></div><!-- /header -->
+
+	<!-- /content -->
+
+	<div data-role="footer" data-position="fixed" role="contentinfo" class="ui-footer ui-bar-inherit ui-footer-fixed slideup">
+		<div data-role="navbar" class="ui-navbar" role="navigation">
+			<ul class="ui-grid-b">
+				<li class="ui-block-a"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-link ui-btn">Menu item 1</a></li>
+				<li class="ui-block-b"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn-active ui-state-persist ui-link ui-btn">Menu item 2</a></li>
+				<li class="ui-block-c"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-link ui-btn">Menu item 3</a></li>
+			</ul>
+		</div>
+		<h4 style="display:none;" class="ui-title" role="heading" aria-level="1">Footer</h4>
+	</div>
+
+	<div data-role="panel" id="panel-reveal" class="ui-panel ui-panel-position-left ui-panel-display-reveal ui-panel-closed ui-body-inherit ui-panel-animate">
+		<div class="ui-panel-inner"><ul data-role="listview" class="ui-listview">
+			<li data-icon="delete" class="ui-first-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-delete">Close</a></li>
+			<li><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
+			<li><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
+			<li class="ui-last-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
+		</ul><br><br><button class="ui-btn ui-shadow ui-corner-all">Button</button></div>
+		
+		
+	</div>
+
+	<div data-role="panel" id="panel-overlay" data-display="overlay" class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-inherit ui-panel-animate ui-panel-closed">
+		<div class="ui-panel-inner"><ul data-role="listview" class="ui-listview">
+			<li data-icon="delete" class="ui-first-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-delete">Close</a></li>
+			<li><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
+			<li><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
+			<li class="ui-last-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
+		</ul><br><br><button class="ui-btn ui-shadow ui-corner-all">Button</button></div>
+		
+		
+	</div>
+
+	<div data-role="panel" id="panel-push" data-display="push" class="ui-panel ui-panel-position-left ui-panel-display-push ui-panel-closed ui-body-inherit ui-panel-animate">
+		<div class="ui-panel-inner"><ul data-role="listview" class="ui-listview">
+			<li data-icon="delete" class="ui-first-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-delete">Close</a></li>
+			<li><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
+			<li><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
+			<li class="ui-last-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
+		</ul><br><br><button class="ui-btn ui-shadow ui-corner-all">Button</button></div>
+		
+		
+	</div>
+
+<div class="ui-screen-hidden ui-popup-screen ui-overlay-inherit" id="select-choice-1-listbox-screen"></div><div class="ui-popup-container ui-popup-hidden ui-popup-truncate" id="select-choice-1-listbox-popup"><div id="select-choice-1-listbox" class="ui-selectmenu ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all"><div class="ui-header ui-bar-inherit"><h1 class="ui-title"></h1><a role="button" href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-notext ui-icon-delete">Close</a></div><ul class="ui-selectmenu-list ui-listview" id="select-choice-1-menu" role="listbox" aria-labelledby="select-choice-1-button"><li data-option-index="0" data-icon="false" class="ui-first-child" role="option" aria-selected="false"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" tabindex="-1" class="ui-btn ui-checkbox-off ui-btn-icon-right">Standard: 7 day</a></li><li data-option-index="1" data-icon="false" class="" role="option" aria-selected="false"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" tabindex="-1" class="ui-btn ui-checkbox-off ui-btn-icon-right">Rush: 3 days</a></li><li data-option-index="2" data-icon="false" class="" role="option" aria-selected="false"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" tabindex="-1" class="ui-btn ui-checkbox-off ui-btn-icon-right">Express: next day</a></li><li data-option-index="3" data-icon="false" class="ui-last-child" role="option" aria-selected="false"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" tabindex="-1" class="ui-btn ui-checkbox-off ui-btn-icon-right">Overnight</a></li></ul></div></div></div><!-- /page -->
+
+
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div><div class="ui-panel-dismiss"></div><div class="ui-panel-dismiss" style="height: 2797px;"></div><div class="ui-panel-dismiss"></div></body></html>

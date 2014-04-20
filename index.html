@@ -19,25 +19,50 @@
 	</head>
 	<body>
 		<div data-role="page" data-theme="a">
-			<div data-role="header"  data-position="fixed" data-tap-toggle="false">
-				 <img src="images/logo.png" class="logo" />
+			<div data-role="header"  data-position="fixed" data-tap-toggle="false" data-iconpos="left">
+				<a href="#panel-push" data-theme="a"  class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext ui-btn-inline"></a>
+					<img src="images/logo.png" class="logo" />				
 			</div>
-			<div data-role="content" data-theme="a">
-				<fieldset data-role="controlgroup"  data-type="horizontal" data-role="fieldcontain">
-				
-				<a href="http://demos.jquerymobile.com/1.4.2/theme-default/#panel-push" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-mini">Push</a>
-				</fieldset>
+			<div data-role="content" data-theme="a">							
+				<ul data-role="listview" data-inset="true">
+					<li>
+						<a href="#" >
+							<img src="images/funciones.png">
+							<h2>Formulas</h2>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/calc.png">
+							<h2>Calculos</h2>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="images/personas.png">
+							<h2>Personas</h2>
+						</a>
+					</li>					
+				</ul>				
 			</div>
 			<div data-role="panel" id="panel-push" data-display="push" class="ui-panel ui-panel-position-left ui-panel-display-push ui-panel-closed ui-body-inherit ui-panel-animate">
-		<div class="ui-panel-inner"><ul data-role="listview" class="ui-listview">
-			<li data-icon="delete" class="ui-first-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-delete">Close</a></li>
-			<li><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
-			<li><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
-			<li class="ui-last-child"><a href="http://demos.jquerymobile.com/1.4.2/theme-default/#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">List item</a></li>
-		</ul><br><br><button class="ui-btn ui-shadow ui-corner-all">Button</button></div>
-		
-		
-	</div>
+				<div class="ui-panel-inner">
+					<ul data-role="listview" class="ui-listview">
+						<li data-icon="delete" class="ui-first-child">
+							<a href="/#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-delete">Close</a>
+						</li>
+						<li>
+							<a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Formulas</a>
+						</li>
+						<li>
+							<a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Calculos</a>
+						</li>
+						<li class="ui-last-child">
+							<a href="#" class="ui-btn ui-btn-icon-right ui-icon-carat-r">Personas</a>
+						</li>
+					</ul>
+				</div>	
+			</div>
 		</div>
 	</body>
 </html>

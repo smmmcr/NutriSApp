@@ -24,11 +24,11 @@ span.error{
 	font-size: 0.8em;
 	display:none;
 }
-div[data-role="page"]{
+/*div[data-role="page"]{
 /*	margin-top:60px; */
-	background: url(../images/bg_hands.png) no-repeat;
+/*	background: url(../images/bg_hands.png) no-repeat;
 	background-position: bottom;
-}
+}*/
 div.topslider{
 	height:120px;
 	background:white;
